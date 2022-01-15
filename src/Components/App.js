@@ -49,17 +49,19 @@ function App() {
 
 			setTimeout(() => {
 				getHeroes(address);
-			}, 30000);
+			}, 60000);
 		} catch (err) {
 			console.warn(`Error getting heroes for address ${address}`);
-			setTimeout(getHeroes, 30000);
+			setTimeout(getHeroes, 60000);
 		}
 	};
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		setAddressToStorage(address);
-		getHeroes(address);
+		if (address) {
+			setAddressToStorage(address);
+			getHeroes(address);
+		}
 	};
 
 	useEffect(() => {
@@ -69,7 +71,10 @@ function App() {
 	}, []);
 
 	useEffect(() => {
-		if (isFirstTime) getHeroes(address);
+		if (isFirstTime && address) {
+			getHeroes(address);
+			SetIsFirstTime(false);
+		}
 	}, [address]);
 
 	const getAddressFromStorage = () => {
@@ -84,24 +89,32 @@ function App() {
 
 	return (
 		<div className='App'>
-			<div className='header'>
+			<div className='header mt-3'>
 				<form onSubmit={handleSubmit}>
 					<label>
 						Address:{' '}
 						<input
+							className='bg-black text-white address-input'
 							type='text'
 							value={address}
 							onChange={(e) => setAddress(e.target.value)}
 						/>
 					</label>
-					<input type='submit' value='Submit' />
+
+					<input
+						className='bg-black text-white'
+						type='submit'
+						value='Submit'
+					/>
 				</form>
 			</div>
 			{heroList.length > 0 && (
-				<div className='body'>
+				<div className='body mt-3'>
 					<Container fluid>
 						<Row className='align-items-center'>
 							<Col>No.</Col>
+							<Col>Level</Col>
+							<Col>XP</Col>
 							<Col>Quest</Col>
 							<Col>Stamina</Col>
 							<Col>Full at</Col>
