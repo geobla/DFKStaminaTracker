@@ -1,0 +1,4 @@
+html { 
+   font-size: calc(0.7em + 0.4vw);
+   height: 100vh;
+}
