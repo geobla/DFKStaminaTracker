@@ -54,18 +54,22 @@ function Hero(props) {
 		<>
 			{hero && (
 				<>
-					<Row className='align-items-center'>
-						<Col>{hero.id}</Col>
-						<Col>{hero.level}</Col>
-						<Col>
+					<Row className='align-items-center mt-3'>
+						<Col xs={2} md>
+							{hero.id}
+						</Col>
+						<Col className='d-none d-sm-block'>{hero.level}</Col>
+						<Col xs={3} md>
 							{hero.xp} / {baseXp + xpPerLevel * hero.level} (
 							{Math.floor(
 								(hero.xp * 100) / (baseXp + xpPerLevel * hero.level),
 							)}
 							%)
 						</Col>
-						<Col>{hero.isQuesting && <>In progress</>}</Col>
-						<Col>
+						<Col xs={3} md>
+							{hero.isQuesting && <>YES</>}
+						</Col>
+						<Col xs={4} md>
 							~{toFixed(hero.currentStamina, 1)} /{' '}
 							{hero.maximumStamina} (
 							{Math.floor(
@@ -79,7 +83,7 @@ function Hero(props) {
 								}
 							/>
 						</Col>
-						<Col>
+						<Col className='d-none d-sm-block'>
 							{new Date(hero.readyAt * 1000).toLocaleString()}
 						</Col>
 					</Row>

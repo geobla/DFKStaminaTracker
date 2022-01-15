@@ -112,12 +112,20 @@ function App() {
 				<div className='body mt-3'>
 					<Container fluid>
 						<Row className='align-items-center'>
-							<Col>No.</Col>
-							<Col>Level</Col>
-							<Col>XP</Col>
-							<Col>Quest</Col>
-							<Col>Stamina</Col>
-							<Col>Full at</Col>
+							<Col xs={2} md>
+								No.
+							</Col>
+							<Col className='d-none d-sm-block'>Level</Col>
+							<Col xs={3} md>
+								XP
+							</Col>
+							<Col xs={3} md>
+								Questing
+							</Col>
+							<Col xs={4} md>
+								Stamina
+							</Col>
+							<Col className='d-none d-sm-block'>Full at</Col>
 						</Row>
 						{heroList.map((hero) => (
 							<Hero
@@ -129,10 +137,8 @@ function App() {
 						))}
 					</Container>
 					<Container className='mt-5'>
-						<Row>
-							<Col md={{ span: 4, offset: 4 }}>
-								Last updated: {lastUpdated}
-							</Col>
+						<Row className='justify-content-center'>
+							<Col xs='auto'>Last updated: {lastUpdated}</Col>
 						</Row>
 					</Container>
 				</div>
