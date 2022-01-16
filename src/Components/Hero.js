@@ -27,8 +27,12 @@ function Hero(props) {
 			if (currentQuest === zeroAddress) isQuesting = false;
 
 			const now = parseInt(new Date().getTime() / 1000);
-			const currentStamina =
-				fullStamina - (fullStaminaReadyAt - now) / timeForOneStamina;
+			let currentStamina = 0;
+			if (fullStaminaReadyAt <= now) currentStamina = fullStamina;
+			else
+				currentStamina =
+					fullStamina -
+					(fullStaminaReadyAt - now) / timeForOneStamina;
 
 			const currentXp = Number(hero['state']['xp']);
 			setHero({
