@@ -88,7 +88,9 @@ function Hero(props) {
 							/>
 						</Col>
 						<Col className='d-none d-sm-block'>
-							{new Date(hero.readyAt * 1000).toLocaleString()}
+							{hero.currentStamina === hero.maximumStamina
+								? 'Now'
+								: new Date(hero.readyAt * 1000).toLocaleString()}
 						</Col>
 					</Row>
 				</>
