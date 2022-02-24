@@ -15,7 +15,7 @@ function Hero(props) {
 	const getCurrentStamina = async () => {
 		try {
 			const hero = await props.heroContract.getHero(props.id);
-
+			console.log(hero);
 			const fullStamina = Number(hero['stats']['stamina']);
 			const fullStaminaReadyAt = Number(
 				hero['state']['staminaFullAt'],
@@ -23,6 +23,9 @@ function Hero(props) {
 			let currentQuest = hero['state']['currentQuest'].toString();
 
 			const currentLevel = hero['state']['level'];
+			let calculatedXp = baseXp + xpPerLevel * currentLevel;
+			if (currentLevel > 5) calculatedXp += 1000;
+
 			let isQuesting = true;
 			if (currentQuest === zeroAddress) isQuesting = false;
 
@@ -44,6 +47,7 @@ function Hero(props) {
 				readyAt: fullStaminaReadyAt,
 				currentStamina,
 				isQuesting,
+				levelUpXp: calculatedXp,
 			});
 		} catch (err) {
 			console.warn(`Error getting hero ${props.id}`);
@@ -64,10 +68,8 @@ function Hero(props) {
 						</Col>
 						<Col className='d-none d-sm-block'>{hero.level}</Col>
 						<Col xs={3} md>
-							{hero.xp} / {baseXp + xpPerLevel * hero.level} (
-							{Math.floor(
-								(hero.xp * 100) / (baseXp + xpPerLevel * hero.level),
-							)}
+							{hero.xp} / {hero.levelUpXp} (
+							{Math.floor((hero.xp * 100) / hero.levelUpXp)}
 							%)
 						</Col>
 						<Col xs={3} md>
