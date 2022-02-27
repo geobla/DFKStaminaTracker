@@ -24,7 +24,27 @@ function Hero(props) {
 
 			const currentLevel = hero['state']['level'];
 			let calculatedXp = baseXp + xpPerLevel * currentLevel;
-			if (currentLevel > 5) calculatedXp += 1000;
+			if (currentLevel > 5) {
+				switch (currentLevel) {
+					case 6:
+						calculatedXp = 8000;
+						break;
+					case 7:
+						calculatedXp = 10000;
+						break;
+					case 8:
+						calculatedXp = 12000;
+						break;
+					case 9:
+						calculatedXp = 16000;
+						break;
+					case 10:
+						calculatedXp = 20000;
+						break;
+					default:
+						calculatedXp = 20000 + 4000 * (currentLevel - 10);
+				}
+			}
 
 			let isQuesting = true;
 			if (currentQuest === zeroAddress) isQuesting = false;
