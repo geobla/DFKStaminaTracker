@@ -4,6 +4,35 @@ import ProgressBar from 'react-bootstrap/ProgressBar';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
+function calculateRequiredXp(currentLevel) {
+	let xpNeeded;
+	const nextLevel = currentLevel + 1;
+	switch (true) {
+		case currentLevel < 6:
+			xpNeeded = nextLevel * 1000;
+			break;
+		case currentLevel < 9:
+			xpNeeded = 4000 + (nextLevel - 5) * 2000;
+			break;
+		case currentLevel < 16:
+			xpNeeded = 12000 + (nextLevel - 9) * 4000;
+			break;
+		case currentLevel < 36:
+			xpNeeded = 40000 + (nextLevel - 16) * 5000;
+			break;
+		case currentLevel < 56:
+			xpNeeded = 140000 + (nextLevel - 36) * 7500;
+			break;
+		case currentLevel >= 56:
+			xpNeeded = 290000 + (nextLevel - 56) * 10000;
+			break;
+		default:
+			xpNeeded = 0;
+			break;
+	}
+
+	return xpNeeded;
+}
 function Hero(props) {
 	const timeForOneStamina = 20 * 60;
 	const zeroAddress = '0x0000000000000000000000000000000000000000';
@@ -23,28 +52,7 @@ function Hero(props) {
 			let currentQuest = hero['state']['currentQuest'].toString();
 
 			const currentLevel = hero['state']['level'];
-			let calculatedXp = baseXp + xpPerLevel * currentLevel;
-			if (currentLevel > 5) {
-				switch (currentLevel) {
-					case 6:
-						calculatedXp = 8000;
-						break;
-					case 7:
-						calculatedXp = 10000;
-						break;
-					case 8:
-						calculatedXp = 12000;
-						break;
-					case 9:
-						calculatedXp = 16000;
-						break;
-					case 10:
-						calculatedXp = 20000;
-						break;
-					default:
-						calculatedXp = 20000 + 4000 * (currentLevel - 10);
-				}
-			}
+			let calculatedXp = calculateRequiredXp(currentLevel);
 
 			let isQuesting = true;
 			if (currentQuest === zeroAddress) isQuesting = false;
