@@ -4,6 +4,6 @@ Docker ready!!
 
 docker pull geobla/dfk_stamina_tracker:v1.0
 
-Demo page: https://leunamd.github.io/DFKStaminaTracker/
+## Modified to track CrystalVale!!
 
 
