@@ -90,6 +90,7 @@ function App() {
   return (
     <div className="App">
       <div className="header mt-3">
+        <img src={logo} className="logo" alt="" />
         <form onSubmit={handleSubmit}>
           <label>
             Address:{' '}
@@ -139,7 +140,6 @@ function App() {
           </Container>
         </div>
       )}
-      <img src={logo} className="logo" alt="" />
     </div>
   );
 }
