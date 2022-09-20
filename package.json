@@ -2,7 +2,7 @@
   "name": "dfk-stamina-tracker",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://leunamd.github.io/DFKStaminaTracker",
+  "homepage": "https://geobla.github.io/DFKStaminaTracker",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^12.1.2",
