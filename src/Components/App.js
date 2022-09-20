@@ -1,4 +1,4 @@
-import logo from '/img/dfkLogoHead2.jpg';
+import logo from './img/dfkLogoHead2.jpg';
 import './App.css';
 import Hero from './Hero';
 import { useState, useEffect } from 'react';
@@ -90,7 +90,7 @@ function App() {
   return (
     <div className="App">
       <img src={logo} className="logo" alt="" />
-      <div className="header mt-3">
+      <div className="addressForm">
         <form onSubmit={handleSubmit}>
           <label>
             Address:{' '}
