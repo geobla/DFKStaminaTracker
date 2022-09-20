@@ -1,4 +1,4 @@
-import logo from '../logo.svg';
+import logo from '/img/dfkLogoHead2.jpg';
 import './App.css';
 import Hero from './Hero';
 import { useState, useEffect } from 'react';
@@ -139,6 +139,7 @@ function App() {
           </Container>
         </div>
       )}
+      <img src={logo} className="logo" alt="" />
     </div>
   );
 }
