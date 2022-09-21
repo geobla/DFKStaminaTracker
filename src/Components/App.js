@@ -147,8 +147,8 @@ function App() {
               <pre>
                 <br />
                 <br />
-                Forked and evolved from{' '}
-                <a href="https://github.com/leunamd">leunamd</a> by {''}
+                Forked from <a href="https://github.com/leunamd">leunamd</a>
+                {''} and evolved by{' '}
                 <a href="https://github.com/geobla">geobla</a>!!
               </pre>
             </Row>
