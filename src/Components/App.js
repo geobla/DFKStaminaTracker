@@ -1,4 +1,4 @@
-import logo from './img/dfkLogoHead2.jpg';
+import logo from './img/dfkLogoHead2.png';
 import './App.css';
 import Hero from './Hero';
 import { useState, useEffect } from 'react';
