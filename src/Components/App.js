@@ -1,4 +1,5 @@
 import logo from './img/dfkLogoHead2.png';
+import coffee from './img/coffee.png';
 import './App.css';
 import Hero from './Hero';
 import { useState, useEffect } from 'react';
@@ -90,6 +91,9 @@ function App() {
   return (
     <div className="App">
       <img src={logo} className="logo" alt="" />
+      <h4 className="subHeader">
+        Add your Address and get RealTime info about your Heroes in CrystalVale!
+      </h4>
       <div className="addressForm">
         <form onSubmit={handleSubmit}>
           <label>
@@ -136,6 +140,25 @@ function App() {
           <Container className="mt-5">
             <Row className="justify-content-center">
               <Col xs="auto">Last updated: {lastUpdated}</Col>
+            </Row>
+          </Container>
+          <Container className="Attributes">
+            <Row className="nn">
+              <pre>
+                Forked and evolved from{' '}
+                <a href="https://github.com/leunamd">leunamd</a> by {''}
+                <a href="https://github.com/geobla">geobla</a>!!
+              </pre>
+            </Row>
+          </Container>
+          <Container className="tipjar">
+            <Row className="nnn">
+              <pre>
+                If you find the page useful, buy me a{' '}
+                <img src={coffee} className="coffee" alt="" /> to keep coding on
+                those long nights for you:
+                0x155eF05daa424df0d07E6Be6EC9AeC66f757b640
+              </pre>
             </Row>
           </Container>
         </div>
