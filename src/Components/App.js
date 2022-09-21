@@ -145,6 +145,8 @@ function App() {
           <Container className="Attributes">
             <Row className="nn">
               <pre>
+                <br />
+                <br />
                 Forked and evolved from{' '}
                 <a href="https://github.com/leunamd">leunamd</a> by {''}
                 <a href="https://github.com/geobla">geobla</a>!!
@@ -154,9 +156,15 @@ function App() {
           <Container className="tipjar">
             <Row className="nnn">
               <pre>
-                If you find the page useful, buy me a{' '}
-                <img src={coffee} className="coffee" alt="" /> to keep coding on
-                those long nights for you:
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                {''}If you find the page useful, buy me a{' '}
+                <img src={coffee} className="coffee" alt="" /> <br />
+                to keep coding on those long nights for you:
+                <br />
                 0x155eF05daa424df0d07E6Be6EC9AeC66f757b640
               </pre>
             </Row>
