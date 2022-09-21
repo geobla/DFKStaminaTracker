@@ -5,3 +5,9 @@
   height: 20vh;
 }
 
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
