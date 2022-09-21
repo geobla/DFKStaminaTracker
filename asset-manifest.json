@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/DFKStaminaTracker/static/css/main.b6c0d809.css",
+    "main.css": "/DFKStaminaTracker/static/css/main.a42c5968.css",
     "main.js": "/DFKStaminaTracker/static/js/main.070ee447.js",
     "static/media/dfkLogoHead2.jpg": "/DFKStaminaTracker/static/media/dfkLogoHead2.42d88e53b4400895d071.jpg",
     "index.html": "/DFKStaminaTracker/index.html",
-    "main.b6c0d809.css.map": "/DFKStaminaTracker/static/css/main.b6c0d809.css.map",
+    "main.a42c5968.css.map": "/DFKStaminaTracker/static/css/main.a42c5968.css.map",
     "main.070ee447.js.map": "/DFKStaminaTracker/static/js/main.070ee447.js.map"
   },
   "entrypoints": [
-    "static/css/main.b6c0d809.css",
+    "static/css/main.a42c5968.css",
     "static/js/main.070ee447.js"
   ]
 }
