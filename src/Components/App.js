@@ -24,10 +24,6 @@ function App() {
   const [lastUpdated, setLastUpdated] = useState(null);
   const [isFirstTime, SetIsFirstTime] = useState(true);
 
-  useEffect(() => {
-    ReactGA.pageview(Window.location.pathname);
-  }, []);
-
   const getHeroContract = () => {
     const contract = new ethers.Contract(
       config.contract.hero,
