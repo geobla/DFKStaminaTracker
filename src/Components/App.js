@@ -73,6 +73,7 @@ function App() {
     getQuestContract();
     getHeroContract();
     getAddressFromStorage();
+    ReactGA.pageview(window.location.pathname);
   }, []);
 
   useEffect(() => {
