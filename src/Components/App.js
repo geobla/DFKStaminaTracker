@@ -11,6 +11,10 @@ import { compare } from '../Utils/';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import ReactGA from 'react-ga';
+
+const TRACKING_ID = 'G-CYFSLV1YLD'; // OUR_TRACKING_ID
+ReactGA.initialize(TRACKING_ID);
 
 function App() {
   const [address, setAddress] = useState('');
@@ -142,17 +146,29 @@ function App() {
               <Col xs="auto">Last updated: {lastUpdated}</Col>
             </Row>
           </Container>
-          <Container className="Attributes">
-            <Row className="nn">
-              <pre>
-                <br />
-                <br />
-                Forked from <a href="https://github.com/leunamd">leunamd</a>
-                {''} and evolved by{' '}
-                <a href="https://github.com/geobla">geobla</a>!!
-              </pre>
-            </Row>
-          </Container>
+          <div className="Attributes">
+            <p>
+              <br />
+              <br />
+              Forked from{' '}
+              <a
+                href="https://github.com/leunamd"
+                target="_blank"
+                rel="noreferrer"
+              >
+                leunamd
+              </a>
+              {''} and evolved by{' '}
+              <a
+                href="https://github.com/geobla"
+                target="_blank"
+                rel="noreferrer"
+              >
+                geobla
+              </a>
+              !!
+            </p>
+          </div>
           <Container className="tipjar">
             <Row className="nnn">
               <pre>
